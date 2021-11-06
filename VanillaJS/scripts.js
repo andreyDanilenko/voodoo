@@ -5,6 +5,7 @@ const postsList = document.querySelector('.posts')
 const searchInput = document.querySelector('.input')
 
 function createPostItem(post, user) {
+
     const postItem = document.createElement("li");
     postItem.classList.add('post');
 
@@ -44,6 +45,7 @@ function fetchUsers() {
 
 Promise.all([fetchPosts(), fetchUsers()])
     .then(([posts, userMap]) => {
+        let array = []
         posts.map(post => createPostItem(post, userMap))
         searchInput.addEventListener('input', (e) => {
             array = posts.filter(post => userMap[post.userId].name.toLowerCase().includes(e.target.value.toLowerCase()))
