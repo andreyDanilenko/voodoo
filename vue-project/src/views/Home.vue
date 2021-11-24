@@ -8,19 +8,23 @@
       />
     </div>
     <div class="home__posts">
-      <div v-for="post in searchAuthorPosts" :key="post" class="home__post">
-        <h2 class="home__post-title">{{ post.title }}</h2>
-        <div class="home__post-body">{{ post.body }}</div>
-        <div class="home__post-author">{{ users[post.userId].name }}</div>
-      </div>
+      <post
+        v-for="post in searchAuthorPosts"
+        :key="post"
+        :post="post"
+        :users="users"
+      />
     </div>
   </div>
 </template>
 
 <script>
 import { mapState, mapGetters, mapActions, mapMutations } from "vuex";
+import Post from "../components/Post.vue";
 
 export default {
+  components: { Post },
+
   computed: {
     ...mapGetters(["searchAuthorPosts"]),
     ...mapState({
