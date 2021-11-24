@@ -69,40 +69,7 @@ export default {
   &__posts {
     display: flex;
     justify-content: space-between;
-
     flex-wrap: wrap;
-  }
-
-  &__post {
-    box-sizing: border-box;
-    margin-top: 15px;
-    width: 100%;
-    border: 1px solid #4682b4;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    @media (min-width: 660px) {
-      width: calc((100% / 2) - 30px);
-    }
-
-    @media (min-width: 960px) {
-      width: calc((100% / 3) - 30px);
-    }
-  }
-
-  &__post-title {
-    margin: 0;
-  }
-
-  &__post-body {
-    margin-top: 10px;
-  }
-
-  &__post-author {
-    margin-top: 10px;
-    font-weight: 600;
   }
 }
 </style>
